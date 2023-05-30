@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="myClass" class="ex_2_1.MyClass">
+        <constructor-arg value="10"/>
+    </bean>
+    <bean id="myClass1" class="ex_2_2.MyClass">
+        <constructor-arg value="1"/>
+    </bean>
+    <bean id="myClass2" class="ex_2_2.MyClass">
+        <constructor-arg value="2"/>
+    </bean>
+    <bean id="myClass3" class="ex_2_2.MyClass">
+        <constructor-arg value="3"/>
+    </bean>
+    <util:map id="myMap" map-class="java.util.HashMap">
+        <entry key="key1" value-ref="myClass"/>
+        <entry key="key2" value-ref="myClass2"/>
+        <entry key="key3" value-ref="myClass3"/>
+    </util:map>
+
+</beans>
